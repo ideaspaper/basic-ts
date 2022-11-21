@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Bobi",
+        "parent_id": 1
+    },
+    {
+        "id": 2,
+        "name": "Susi",
+        "parent_id": 1
+    },
+    {
+        "id": 3,
+        "name": "Hermione",
+        "parent_id": 2
+    },
+    {
+        "id": 4,
+        "name": "Richard",
+        "parent_id": 2
+    },
+    {
+        "id": 5,
+        "name": "Renata",
+        "parent_id": 2
+    },
+    {
+        "id": 6,
+        "name": "Regina",
+        "parent_id": 3
+    },
+    {
+        "id": 7,
+        "name": "Yuli",
+        "parent_id": 3
+    },
+    {
+        "id": 8,
+        "name": "June",
+        "parent_id": 4
+    }
+]

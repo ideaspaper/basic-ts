@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "first_name": "Acong",
+        "last_name": "Suherman",
+        "gender": "Male"
+    },
+    {
+        "id": 2,
+        "first_name": "Djoko",
+        "last_name": "Santoso",
+        "gender": "Male"
+    },
+    {
+        "id": 3,
+        "first_name": "Sitorus",
+        "last_name": "Hermanto",
+        "gender": "Male"
+    },
+    {
+        "id": 4,
+        "first_name": "Maria",
+        "last_name": "Herlina",
+        "gender": "Female"
+    }
+]
