@@ -23,7 +23,7 @@ interface INumberData extends ICommonProps {
 }
 ```
 
-In example above, `StringData` and `NumberData` have same properties with minor differences in data type. That type definition can be simplified by create a generic type (ex: `Data`) with one parameter `T`.
+In example above, `IStringData` and `INumberData` have same properties with minor differences in data type. That type definition can be simplified by create a generic type (ex: `IData`) with one parameter `T`.
 
 ```ts
 interface IData<T> extends ICommonProps {
