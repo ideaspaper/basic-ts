@@ -12,16 +12,17 @@
 const message = 'Hello world!';
 
 console.log(message.toLowerCase());
-message();
+message(); // TypeError: message is not a function
 ```
 
 ```js
-// Somewhere in the deepest of node_modules
+// Somewhere
 function fn(x) {
   return x.flip();
 }
 
-fn('Hello world!');
+// Executing fn() in your code
+fn('Hello world!'); // TypeError: x.flip is not a function
 ```
 
 ### Initializing a TypeScript Project
@@ -39,83 +40,14 @@ npx tsc
 npx tsc --watch
 ```
 
-## Basic Types
+## More
 
-### Primitive Typess
-
-```ts
-let a: string = 'Hello world!';
-let b: number = 42;
-let c: boolean = false;
-
-a = 'Halo dunia!';
-b = false; // Type 'boolean' is not assignable to type 'number'.
-c = 42; // Type 'number' is not assignable to type 'boolean'.
-```
-
-### Arrays
-
-```ts
-const a: number[] = [42, 43, 44];
-const aa: Array<number> = [42, 43, 44];
-const b: string[] = ['a', 'b', 'c'];
-const bb: Array<string> = ['a', 'b', 'c'];
-const c: boolean[] = [true, false, true];
-const cc: Array<boolean> = [true, false, true];
-```
-
-### Functions
-
-```ts
-function greet(name: string) {
-  console.log(`Hello my name is ${name}`);
-}
-
-function add(a: number, b: number): number {
-  return a + b;
-}
-```
-
-### Type Inference
-
-```ts
-const a = [42, 43, 44];
-const b = ['a', 'b', 'c'];
-const c = [true, false, true];
-
-function add(a: number, b: number) {
-  return a + b;
-}
-```
-
-### Contextual Typing
-
-```ts
-const names = ['Acong', 'Djoko', 'Sitorus'];
-names.forEach((name) => {
-  console.log(name.toUpperCase());
-});
-```
-
-### Objects
-
-```ts
-const a: { key1: number, key2: string } = {
-  key1: 42,
-  key2: 'Fourty-two'
-};
-
-const b: { key1: number, key2?: string } = {
-  key1: 42
-};
-```
-
-### Union Types
-
-```ts
-
-```
+- [Basic Types](./1_basic_types.md)
+- [Generics](./2_generics.md)
+- [Operators](./3_operators.md)
+- [Utility Types](./4_utility_types.md)
 
 ## References
 
-- [Object, {}, object](https://stackoverflow.com/questions/49464634/difference-between-object-and-object-in-typescript)
+- [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
+- [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
