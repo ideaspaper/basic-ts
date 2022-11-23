@@ -70,3 +70,9 @@ type Television<T> = (message: T) => T;
 type Monitor<T> = (message: T, refreshRate: number) => T;
 type Display<U, V> = Television<U> | Monitor<V>;
 ```
+
+## Exercise
+
+By using generics, implement [Bubble Sort Algoritm](https://www.geeksforgeeks.org/bubble-sort/) function which only accept array of strings or array of numbers as its input.
+
+Hint: [Generic Constraints](https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-constraints)
