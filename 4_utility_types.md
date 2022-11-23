@@ -8,7 +8,7 @@ Contructs a type with all properties as optional.
 
 ```ts
 // all properties are required
-interface User {
+interface IUser {
   name: string;
   dob: number;
   address: {
@@ -18,7 +18,7 @@ interface User {
 }
 
 // make all `User`'s "first level" properties optional
-type PartialUser = Partial<User>;
+type PartialUser = Partial<IUser>;
 
 // properties `dob` and `address` are optional
 const john: PartialUser = {
@@ -44,7 +44,7 @@ mrX.name = 'Mr. X';
 The opposite of `Partial`, `Required` constructs a type where all properties are required.
 
 ```ts
-interface User {
+interface IUser {
   name: string;
   dob?: number;
   sex?: 'male' | 'female';
@@ -54,7 +54,7 @@ interface User {
   };
 }
 
-type RequiredUser = Required<User>;
+type RequiredUser = Required<IUser>;
 
 const jane: RequiredUser = {
   name: 'Jane Doe',
@@ -73,7 +73,7 @@ Construct a type where all properties are `readonly`. Selective read-only proper
 
 ```ts
 // interface with partially read-only properties
-interface User {
+interface IUser {
   readonly name: string;
   readonly dob: number;
   email: string;
@@ -81,9 +81,9 @@ interface User {
   isPremium: boolean;
 }
 
-type ReadOnlyUser = Readonly<User>;
+type ReadOnlyUser = Readonly<IUser>;
 
-const doe: User = {
+const doe: IUser = {
   name: 'John Doe',
   dob: 223124512,
   email: 'doe_doe@mailer.com',
@@ -130,14 +130,14 @@ const b: Record<Job, string | boolean> = {
 Construct a type by picking one or more types from **interface**-like type.
 
 ```ts
-interface Fox {
+interface IFox {
   lazy: string;
   fox: string;
   jump: string;
   over: string;
 }
 
-type PickedFox = Pick<Fox, 'fox' |  'jump'>;
+type PickedFox = Pick<IFox, 'fox' |  'jump'>;
 
 const jumpingFox: PickedFox = {
   fox: 'Foxie',
@@ -152,14 +152,14 @@ const jumpingFox: PickedFox = {
 Contrary to `Pick`, `Omit` construct a type a removing several keys.
 
 ```ts
-interface Fox {
+interface IFox {
   lazy: string;
   fox: string;
   jump: string;
   over: string;
 }
 
-type Omitted = Omit<Fox, 'fox' | 'jump'>;
+type Omitted = Omit<IFox, 'fox' | 'jump'>;
 
 const noFox: Omitted = {
   fox: 'Foxie', // cannot assign `fox`
@@ -268,8 +268,8 @@ const days: Func4Return['days'] = [3, 5, 2, 6];
 
 // if the argument is not type of function
 type ArgumentString = ReturnType<'abcd'>; // error
-interface Dummy { date: Date; days: number[] };
-type ArgumentArray = ReturnType<Dummy>; // error
+interface IDummy { date: Date; days: number[] };
+type ArgumentArray = ReturnType<IDummy>; // error
 
 ```
 

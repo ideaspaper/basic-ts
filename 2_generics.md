@@ -5,19 +5,19 @@ A type **generics** is a way to make defined type more usable, and defined (writ
 For example, lets say we want to create an **object-like** type which has similar properties.
 
 ```ts
-interface CommonProps {
+interface ICommonProps {
   length: number;
   isPublic: boolean;
   created_at: number;
   updated_at: number;
 }
 
-interface StringData extends CommonProps {
+interface IStringData extends ICommonProps {
   get: (entry: string) => string;
   set: (...entries: string[]) => boolean;
 }
 
-interface NumberData extends CommonProps {
+interface INumberData extends ICommonProps {
   get: (entry: number) => number;
   set: (...entries: number[]) => boolean;
 }
@@ -26,7 +26,7 @@ interface NumberData extends CommonProps {
 In example above, `StringData` and `NumberData` have same properties with minor differences in data type. That type definition can be simplified by create a generic type (ex: `Data`) with one parameter `T`.
 
 ```ts
-interface Data<T> extends CommonProps {
+interface IData<T> extends ICommonProps {
   get: (entry: T) => T;
   set: (...entries: T[]) => boolean;
 }
@@ -38,7 +38,7 @@ let numberData: Data<number>;
 Generics can have default value too.
 
 ```ts
-interface Data<T = string> extends CommonProps {
+interface IData<T = string> extends ICommonProps {
   get: (entry: T) => T;
   set: (...entries: T[]) => boolean;
 }

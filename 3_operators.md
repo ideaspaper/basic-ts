@@ -5,19 +5,19 @@
 The `&` operator is used to create an **intersection** type. In a more simple word, this operator create a type from a combination of two or more types. Combined type, has all properties of origin types. Please note that combining types that have similar property name but of different types will create an error.
 
 ```ts
-interface Taxonomy {
+interface ITaxonomy {
   family: string;
   genus: string;
   species: string;
 }
 
-interface Physiology {
+interface IPhysiology {
   numLimbs: number;
   avgHeight: number;
   diet: 'omnivore' | 'carnivore' | 'herbivore';
 }
 
-type Organism = Taxonomy & Physiology;
+type Organism = ITaxonomy & IPhysiology;
 
 // type `Organism` has both `Taxonomy` and `Physiology` properties
 const hooman: Organism = {
@@ -173,7 +173,7 @@ console.log(person.lastName?.toUpperCase()); // undefined
 An `as` can be used to **assert** a value to a more specific type. `as` can also be used to coerce a type into entirely different type.
 
 ```ts
-interface KeyValue {
+interface IKeyValue {
   id: number;
   value: number;
 }
@@ -184,7 +184,7 @@ let a = {
   description: 'lorem ipsum'
 };
 
-let b: KeyValue = {
+let b: IKeyValue = {
   id: 1,
   value: 10
 };
@@ -192,7 +192,7 @@ let b: KeyValue = {
 a = b; // Property 'description' is missing in type 'KeyValue' but required in type '{ id: number; value: number; description: string; }'.
 
 // I am sure that `a` has `KeyValue` type
-let aa = a as KeyValue;
+let aa = a as IKeyValue;
 
 aa = b;
 ```
@@ -202,20 +202,20 @@ aa = b;
 The `readonly` modifier is used to make a property as a readonly.
 
 ```ts
-interface User {
+interface IUser {
   readonly username: string;
   readonly email: string;
   password: string;
 }
 
-const jhon: User = {
-  name: 'jhon-o',
-  email: 'jh@no.com',
-  password: 'aiueo',
+const acong: IUser = {
+  name: 'acong',
+  email: 'acong@mail.com',
+  password: 'password',
 };
 
-jhon.password = 'qwerty'; // ok
-jhon.name = 'youno'; // error. cannot assign because read-only
+acong.password = 'qwerty'; // ok
+acong.name = 'djoko'; // error. cannot assign because read-only
 ```
 
 ## `typeof` operator
@@ -259,13 +259,13 @@ const subtract: BasicMath = (n1, n2) => n1 + n2;
 The `keyof` operator takes an object-like type and return its property names.
 
 ```ts
-interface Foo {
+interface IFoo {
   lorem: string;
   ipsum: number;
   dolor: boolean;
 }
 
-type FooKeys = keyof Foo;
+type FooKeys = keyof IFoo;
 let fooKey: FooKeys = 'dolor';
 fooKey = 'ipsum';
 fooKey = 'amet'; // Type '"amet"' is not assignable to type 'keyof Foo'.
@@ -276,19 +276,19 @@ fooKey = 'amet'; // Type '"amet"' is not assignable to type 'keyof Foo'.
 TypeScript's `in` operator behaves similar to JavaScript's `in`, that usually used as a safeguard when checking property name of an object. Usually used for **mapped types**.
 
 ```ts
-// assume type `Lorem` as follows
-interface Lorem {
+// assume type `ILorem` as follows
+interface ILorem {
   lorem: string;
   dolor: number;
   sit: Date;
   amet: () => void;
 }
 
-// this will create a "copy" of type `Lorem` with all of its properties
+// this will create a "copy" of type `ILorem` with all of its properties
 // as optional and type of string.
 // see "mapped types" for more details/examples
 type NeoLorem = {
-  [L in keyof Lorem]?: string;
+  [L in keyof ILorem]?: string;
 };
 
 type Count = 'one' | 'two' | 'three' | 'four';

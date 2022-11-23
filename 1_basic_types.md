@@ -30,7 +30,7 @@ const nil = null; // `nil` defined as `null` (inferred from null)
 const str: string = 'foo';
 const num: number = 123;
 
-// when declaring variable, it types can be auto infered from its initiaized value
+// when declaring variable, its type can be auto infered from its initiaized value
 const isFresh = true; // inferred to type `boolean`
 ```
 
