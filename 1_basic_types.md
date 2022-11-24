@@ -103,9 +103,7 @@ const arrowFunc = (str: string): boolean => {
 
 // return type can be more than one
 function multipleReturn(): string | boolean {
-  if (conditionA) {
-    return true;
-  }
+  if (conditionA) return true;
   return 'foo';
 }
 
@@ -380,9 +378,7 @@ function returnNever1(): never {
 }
 
 function returnNever2(): never {
-  if (condition) {
-    return 'ok'; // Type 'string' is not assignable to type 'never'.
-  }
+  if (condition) return 'ok'; // Type 'string' is not assignable to type 'never'.
   throw new Error();
 }
 ```

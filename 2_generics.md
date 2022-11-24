@@ -23,7 +23,7 @@ interface INumberData extends ICommonProps {
 }
 ```
 
-In example above, `IStringData` and `INumberData` have same properties with minor differences in data type. That type definition can be simplified by create a generic type (ex: `IData`) with one parameter `T`.
+In example above, `IStringData` and `INumberData` have same properties with minor differences in data type. That type definition can be simplified by creating a generic type (ex: `IData`) with one parameter `T`.
 
 ```ts
 interface IData<T> extends ICommonProps {
@@ -31,8 +31,8 @@ interface IData<T> extends ICommonProps {
   set: (...entries: T[]) => boolean;
 }
 
-let stringData: Data<string>;
-let numberData: Data<number>;
+let stringData: IData<string>;
+let numberData: IData<number>;
 ```
 
 Generics can have default value too.
@@ -43,8 +43,8 @@ interface IData<T = string> extends ICommonProps {
   set: (...entries: T[]) => boolean;
 }
 
-let stringData: Data;
-let numberData: Data<number>;
+let stringData: IData;
+let numberData: IData<number>;
 ```
 
 More examples on generics.

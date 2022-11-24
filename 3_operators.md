@@ -209,13 +209,13 @@ interface IUser {
 }
 
 const acong: IUser = {
-  name: 'acong',
+  username: 'acong',
   email: 'acong@mail.com',
   password: 'password',
 };
 
 acong.password = 'qwerty'; // ok
-acong.name = 'djoko'; // error. cannot assign because read-only
+acong.username = 'djoko'; // error. cannot assign because read-only
 ```
 
 ## `typeof` operator

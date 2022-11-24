@@ -301,3 +301,7 @@ Similar with `Uppercase` and `Lowercase`, except only for first character being 
 const capIpsum: Capitalize<'lOreM iPSum'> = 'LOreM iPSum';
 const uncapIpsum: Uncapitalize<'LOreM IpsUm'> = 'lOreM IpsUm';
 ```
+
+## Exercise
+
+[TypeScript exercises](https://typescript-exercises.github.io/)
