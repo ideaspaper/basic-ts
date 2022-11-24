@@ -385,7 +385,7 @@ function returnNever2(): never {
 
 ## References
 
-- [Difference between 'object' ,{} and Object in TypeScript](https://stackoverflow.com/questions/49464634/difference-between-object-and-object-in-typescript)
+- [Difference between 'object', {} and Object in TypeScript](https://stackoverflow.com/questions/49464634/difference-between-object-and-object-in-typescript)
 - [Difference between string enums and string literal types in TS](https://stackoverflow.com/questions/49761972/difference-between-string-enums-and-string-literal-types-in-ts)
 - ['unknown' vs. 'any'](https://stackoverflow.com/questions/51439843/unknown-vs-any)
 - [What’s the difference between never and void in TypeScript?](https://medium.com/swlh/whats-the-difference-between-never-and-void-in-typescript-16f6629bfcdc)
