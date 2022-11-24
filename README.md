@@ -51,3 +51,4 @@ npx tsc --watch
 
 - [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
 - [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [What is a tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
