@@ -115,6 +115,27 @@ function implicitReturn(param: number | undefined) {
 }
 ```
 
+### Function overloading
+
+```ts
+function add(a: string, b: string): string;
+
+function add(a: number, b: number): number;
+
+function add(a: any, b: any): any {
+  return a + b;
+}
+
+add(4, 2);
+add('4', '2');
+add(4, '2');
+// No overload matches this call.
+//   Overload 1 of 2, '(a: string, b: string): string', gave the following error.
+//     Argument of type 'number' is not assignable to parameter of type 'string'.
+//   Overload 2 of 2, '(a: number, b: number): number', gave the following error.
+//     Argument of type 'string' is not assignable to parameter of type 'number'.
+```
+
 ## Interfaces
 
 Interface is used to define an object-like type.
